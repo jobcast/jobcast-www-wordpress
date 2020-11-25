@@ -1,0 +1,16 @@
+web:
+ image: wordpress
+ links:
+  - mysql
+ environment:
+  - WORDPRESS_DB_USER=johnny
+  - WORDPRESS_DB_PASSWORD=password
+ ports:
+  - "127.0.0.3:8090:80"
+mysql:
+ image: mysql:5.7
+ environment:
+  - MYSQL_ROOT_PASSWORD=password
+  - MYSQL_DATABASE=jobcast-db
+  - MYSQL_USER=johnny
+  - MYSQL_PASSWORD=password
